@@ -97,13 +97,14 @@
         <div class="three-column">
             <?php
             $top_about = SCF::get('top-traning-section', 20);
-            foreach ($top_about as $fields) : ?>
-                <?php $imgurl = wp_get_attachment_image_src($fields['top-traning-image'], 'full'); ?>
+            foreach ($top_about as $fields) : 
+                $imgurl = isset($fields['top-traning-image']) ? wp_get_attachment_image_src($fields['top-traning-image'], 'full') : [''];
+                $link = isset($fields['top-traning-link']) ? home_url() . "/" . $fields['top-traning-link'] : '#'; ?>
                 <div class="three-column__item">
-                    <a href="<?= home_url() . "/" . $fields['top-traning-link']; ?>">
+                    <a href="<?= $link; ?>">
                         <img class="three-column__item--image" src="<?= $imgurl[0] ?>" alt="">
-                        <p class="three-column__item--title orange"><?= $fields['top-traning-title']; ?></p>
-                        <p class="three-column__item--text"><?= $fields['top-traning-text']; ?></p>
+                        <p class="three-column__item--title orange"><?= isset($fields['top-traning-title']) ? $fields['top-traning-title'] : ''; ?></p>
+                        <p class="three-column__item--text"><?= isset($fields['top-traning-text']) ? $fields['top-traning-text'] : ''; ?></p>
                     </a>
                 </div>
             <?php endforeach; ?>
