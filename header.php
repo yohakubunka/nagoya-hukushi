@@ -2,7 +2,10 @@
 // Internet Explorer で開かれた場合はedgeへ開くように通知を出す
 $edge_open = true;
 
-if ($edge_open && $_COOKIE['view_ie'] != 'on') {
+// クッキーが存在しない場合はデフォルト値を設定
+$view_ie = isset($_COOKIE['view_ie']) ? $_COOKIE['view_ie'] : '';
+
+if ($edge_open && $view_ie != 'on') {
   if (get_browser_name() == "ie") { ?>
     <script>
       MoveCheck();
