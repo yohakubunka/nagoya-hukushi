@@ -1,0 +1,301 @@
+html {
+	margin: 0;
+	padding: 0;
+	font-size: 10px !important;
+	scroll-behavior: smooth;
+}
+body {
+	font-size: 1.6rem;
+	letter-spacing: 0.1em;
+	@extend .text;
+	color: $color6;
+	position: relative;
+}
+main {
+	max-width: 100%;
+	width: 100%;
+	.section {
+		max-width: 100%;
+		width: 100%;
+		padding: 112px 0;
+		@include md {
+			padding: 56px 0;
+		}
+		&__inner {
+			max-width: 1000px;
+			width: 100%;
+			padding: 0 16px;
+			margin: 0 auto;
+			&--inner {
+				max-width: 100%;
+				width: 100%;
+			}
+		}
+		&.gray {
+			background-color: $color3;
+		}
+	}
+}
+img {
+	width: 100%;
+	display: inline-block;
+	height: auto;
+}
+
+//font-family
+h1 {
+	font-size: 5.6rem;
+	letter-spacing: 0.15em;
+	line-height: 1em;
+	@extend .catch_copy;
+}
+h2 {
+	font-size: 4rem;
+	letter-spacing: 0.15em;
+	line-height: 1em;
+	@extend .title;
+	@include md {
+		font-size: 3.2rem;
+	}
+	@include xs {
+		font-size: 2.8rem;
+	}
+	span {
+		font-size: 2rem;
+		letter-spacing: 0.15em;
+		line-height: 1em;
+		color: $color5;
+		padding-top: 8px;
+		@extend .alias;
+		@include xs {
+			font-size: 1.8rem;
+		}
+	}
+}
+h3 {
+	font-size: 3.2rem;
+	letter-spacing: 0.1em;
+	line-height: 1.6em;
+	@extend .sab_title;
+	@include md {
+		font-size: 2.4rem;
+	}
+	@include xs {
+		font-size: 2rem;
+	}
+}
+h4 {
+	color: $color4;
+	font-size: 2.4rem;
+	letter-spacing: 0.1em;
+	line-height: 1.6em;
+	@extend .box_title;
+	@include md {
+		font-size: 2rem;
+	}
+	@include xs {
+		font-size: 1.8rem;
+	}
+}
+
+.sectiontitle {
+	@include flex(center, end);
+	padding-bottom: 56px;
+	@include md {
+		padding-bottom: 40px;
+	}
+	&__icon {
+		max-width: 56px;
+		width: 100%;
+		padding-bottom: 28px;
+		@include md {
+			max-width: 40px;
+		}
+		@include xs {
+			max-width: 32px;
+		}
+	}
+	h2 {
+		padding: 0 0 0 16px;
+		@include flex(center, center, 0, 0, 1);
+		@include xs {
+			padding: 0 0 0 8px;
+		}
+		span {
+			color: $color5;
+		}
+	}
+}
+
+h3.middletitle {
+	color: $color5;
+	line-height: 1em;
+	padding-bottom: 56px;
+	@include flex(center, center, 0, 0, 1);
+	padding-bottom: 32px;
+	&::after {
+		content: "";
+		max-width: 56px;
+		width: 100%;
+		height: 2px;
+		background-color: $color4;
+		margin-top: 16px;
+	}
+}
+
+p,
+s span,
+ol,
+ul,
+li {
+	font-size: 1.6rem;
+	letter-spacing: 0.1em;
+	line-height: 1.6em;
+	@extend .text;
+	@include sp {
+		font-size: 1.4rem;
+	}
+}
+
+.pcmenu {
+	display: block !important;
+	@include lg {
+		display: none !important;
+	}
+}
+.spmenu {
+	display: none !important;
+	@include lg {
+		display: flex !important;
+	}
+}
+//parallax
+#news {
+	padding-bottom: 0;
+}
+.parallax01 {
+	margin-top: 64px;
+	height: 320px;
+	position: relative;
+	min-height: 100%;
+	background-size: cover;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: center center;
+	z-index: 2;
+	@include md {
+		padding-top: 32px;
+	}
+	&.bgpot {
+		background-image: url(../images/common/parallax_01.png);
+	}
+}
+
+.parallax02 {
+	margin-top: 0;
+	height: 320px;
+	position: relative;
+	min-height: 100%;
+	background-size: cover;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: center center;
+	z-index: 2;
+	@include md {
+		padding-top: 32px;
+	}
+	&.bgpot {
+		background-image: url(../images/common/parallax_02.png);
+	}
+}
+.pagetitle {
+	@include xl {
+		font-size: 4rem;
+	}
+	@include lg {
+		font-size: 3.2rem;
+	}
+	@include sp {
+		font-size: 2.4rem;
+	}
+}
+.pagesubtitle {
+	@include xl {
+		font-size: 4rem;
+	}
+	@include lg {
+		font-size: 3.2rem;
+	}
+	@include sp {
+		font-size: 2.4rem;
+	}
+}
+//contact
+main {
+	.section {
+		&__inner {
+			.contactinfo,
+			.contactfrom {
+				dl {
+				}
+				dt {
+					font-size: 1.8rem;
+					font-weight: 500;
+					font-style: normal;
+					padding: 16px 0 0 0;
+					@include sp {
+						font-size: 1.6rem;
+					}
+					span {
+						color: $color5;
+						font-size: 1.6rem;
+						padding: 0 0 0 16px;
+						@include sp {
+							font-size: 1.4rem;
+						}
+					}
+				}
+				dd {
+					max-width: 100%;
+					width: 100%;
+					border-bottom: 1px solid $color5;
+					padding-top: 16px;
+					padding: 16px 16px 0 16px;
+					@include sp {
+						padding: 8px 8px 0 8px;
+					}
+					p {
+						font-size: 1.2rem;
+						line-height: 1.2rem;
+						padding: 4px 0 8px 0;
+					}
+					span {
+						input {
+							max-width: 100%;
+							width: 100%;
+							padding-bottom: 4px;
+							font-size: 1.6rem;
+							letter-spacing: 0.1em;
+							&::placeholder {
+								color: $color2;
+								letter-spacing: 0.1em;
+								font-size: 1.6rem;
+							}
+						}
+						.wpcf7-textarea {
+							max-width: 100%;
+							width: 100%;
+							font-size: 1.6rem;
+							letter-spacing: 0.1em;
+							&::placeholder {
+								color: $color2;
+								letter-spacing: 0.1em;
+								font-size: 1.6rem;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

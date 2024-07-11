@@ -1,0 +1,63 @@
+#single {
+    .single-area {
+        @include flex();
+        @include sm {
+            flex-direction: column-reverse;
+        }
+        .single-content {
+            max-width: 720px;
+            width: 100%;
+            margin-right: 32px;
+            @include sm {
+                max-width: 100%;
+                margin-top: 40px
+            }
+            &__date-cat {
+                padding-bottom: 24px
+            }
+            &__title {
+                @extend %shuei-32-b-black;
+                padding-bottom: 56px;
+                @include sm {
+                    padding-bottom: 32px;
+                }
+            }
+            &__img {
+                padding-bottom: 40px;
+            }
+            &__text {
+                padding-bottom: 24px;
+            }
+            &__page {
+                padding-top: 16px;
+                @include flex($align: center);
+                justify-content: space-between;
+                text-align: center;
+                position: relative;
+                img {
+                    width: 5px;
+                }
+                .arrow-img-l {
+                    margin-right: 16px;
+                }
+                .arrow-img-r {
+                    margin-left: 16px;
+                }
+                .tolist {
+                    display: inline-block;
+                    margin: 0 auto;
+                    color: $color3;
+                    font-weight: 500;
+                    @include absoluteCenterX;
+                    top: 16px;
+                }
+                .prev-link,
+                .next-link {
+                    @include flex();
+                    color: $color9;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+}

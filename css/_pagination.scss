@@ -1,0 +1,85 @@
+.pagination {
+    //ページャーのスタイル
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    font-size: 1.8rem;
+    line-height: 1.5em;
+    letter-spacing: 0.08em;
+    margin-top: 64px;
+    @include sm {
+        margin-top: 40px;
+        font-size: 1.4rem;
+    }
+}
+
+
+/* ページャーのリンクボックス　*/
+
+.pagination span,
+.pagination a {
+    padding-bottom: 4px;
+    width: 13px;
+    margin-right: 24px;
+    text-decoration: none;
+    text-align: center;
+    @include flex();
+    justify-content: center;
+    align-items: center;
+    border-bottom: solid 1px $color1;
+    color: $color8;
+    @include sm {
+        margin-right: 8px;
+    }
+}
+
+
+/* ページ番号 */
+
+.pagination .pager {
+    @include sm {}
+}
+
+
+/* ホバー時 & 現在のページ */
+
+.pagination .current {
+    border-bottom: solid 1px $color9;
+}
+
+.pagination a:hover .page-next-1 {
+    stroke: $color1;
+}
+
+.pagination a:hover .page-nprev-1 {
+    stroke: $color1;
+}
+
+
+/* 最初へ */
+
+.pagination a.first {}
+
+
+/* 最後へ */
+
+.pagination a.last {}
+
+
+/* ドット */
+
+.pagination p.pagenation_dots {
+    margin: 0 4px;
+}
+
+
+/* Page x / y */
+
+.pagination span.page_num {
+    display: none;
+}
+
+.nav-links {
+    @include flex();
+}

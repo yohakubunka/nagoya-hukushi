@@ -1,0 +1,534 @@
+#index {
+	.section {
+		.news {
+			padding-bottom: 0; // 新着情報
+			@include flex(between, start);
+			@include lg {
+				@include flex(center, center, 0, 0, 1);
+			}
+			.sectiontitle {
+				padding: 0 40px 0 0;
+				flex-shrink: 0;
+				@include lg {
+					padding: 0 0 56px 0;
+				}
+			}
+			&__list {
+				max-width: 100%;
+				width: 100%;
+				overflow-y: scroll;
+				height: 374px;
+				padding: 24px 0;
+				border-top: 1px solid $color3;
+				border-bottom: 1px solid $color3;
+				&::-webkit-scrollbar {
+					width: 6px;
+					height: 10px;
+				}
+				&::-webkit-scrollbar-track {
+					border-radius: 5px;
+					box-shadow: none;
+				}
+				&::-webkit-scrollbar-thumb {
+					border-radius: 5px;
+					background: $color5;
+				}
+				.article {
+					max-width: 100%;
+					width: 100%;
+					border-bottom: 1px dashed $color3;
+					padding: 0 16px 16px 16px;
+					margin-bottom: 24px;
+					&__remarks {
+						@include flex(start, center);
+						padding-bottom: 8px;
+						&--deta {
+							color: $color4;
+							padding-right: 32px;
+						}
+						&--category {
+							max-width: 90px;
+							width: 100%;
+							height: 24px;
+							border: 1px solid $color4;
+							color: $color4;
+							line-height: 1em;
+							@include flex(center, center);
+						}
+					}
+					&__contents {
+						&--title {
+							font-size: 2rem;
+							color: $color4;
+							padding-bottom: 8px;
+							@include sp {
+								font-size: 1.6rem;
+							}
+						}
+					}
+				}
+			}
+		}
+		.business {
+			// 事業案内
+			.backtext {
+				@include flex(center, center);
+				padding-bottom: 72px;
+				background-image: url(../images/common/business_bg.svg);
+				background-position: right bottom;
+				background-repeat: no-repeat;
+				@include md {
+					@include flex(center, center, 0, 0, 1);
+					background-size: calc(100% - 40px);
+				}
+				.boximg {
+					max-width: calc(50% + 24px);
+					width: 100%;
+					@include md {
+						max-width: 100%;
+						width: 100%;
+					}
+				}
+				.boxtext {
+					max-width: calc(50% - 24px);
+					width: 100%;
+					padding-left: 40px;
+					@include md {
+						padding: 32px 0 0 0;
+						max-width: 100%;
+					}
+					h4 {
+						padding-bottom: 40px;
+						line-height: 1em;
+						@include md {
+							padding-bottom: 24px;
+						}
+					}
+				}
+			}
+			.businesslist,
+			.feature {
+				padding-top: 32px;
+			}
+			.businesslist {
+				//事業一覧
+				h3 {
+					&::before {
+						content: "";
+						max-width: 32px;
+						width: 100%;
+						height: 32px;
+						background-image: url(../images/common/business_icon.svg);
+						margin-bottom: 16px;
+					}
+				}
+			}
+			.feature {
+				//3つの強み
+				h3 {
+					&::before {
+						content: "";
+						max-width: 32px;
+						width: 100%;
+						height: 32px;
+						background-image: url(../images/common/feature_icon.svg);
+						margin-bottom: 16px;
+					}
+				}
+				&__list {
+					max-width: 100%;
+					width: 100%;
+					@include flex(between, start);
+					@include md {
+						@include flex(start, center, 0, 0, 1);
+					}
+					.featurepic {
+						max-width: 296px;
+						width: 100%;
+						@include flex(center, center, 0, 0, 1);
+						@include md {
+							max-width: 100%;
+							padding-bottom: 32px;
+							@include flex(center, center);
+							flex-direction: initial;
+						}
+						@include sp {
+							max-width: 400px;
+							width: 100%;
+							@include flex(center, center, 0, 0, 1);
+						}
+						&__top {
+							position: relative;
+							@include md {
+								flex-shrink: 0;
+								max-width: 240px;
+								width: 100%;
+							}
+							@include sp {
+								width: 100%;
+							}
+							&::before {
+								content: "";
+								width: 90px;
+								height: 108px;
+								@include absoluteNumber;
+							}
+						}
+						&__bottom {
+							@include md {
+								max-width: calc(100% - 24px);
+								width: 100%;
+								padding-left: 24px;
+								@include flex(start, start, 0, 0, 1);
+							}
+							@include sp {
+								@include flex(center, center, 0, 0, 1);
+								padding-left: 0;
+							}
+							h4 {
+								padding: 24px 0 16px 0;
+								text-align: center;
+								@include lg {
+									font-size: 2rem;
+									letter-spacing: 0.05em;
+								}
+								@include md {
+									padding-top: 0;
+								}
+								@include sp {
+									padding: 16px 0;
+								}
+							}
+							p {
+								text-align: center;
+								@include md {
+									text-align: left;
+								}
+							}
+						}
+						&:first-child {
+							margin-right: 8px;
+							@include md {
+								margin-right: 0;
+							}
+							.featurepic__top {
+								&::before {
+									background-image: url(../images/common/number01.svg);
+								}
+							}
+						}
+						&:nth-child(2) {
+							margin: 0 4px;
+							@include md {
+								margin-right: 0;
+							}
+							.featurepic__top {
+								&::before {
+									background-image: url(../images/common/number02.svg);
+								}
+							}
+						}
+						&:last-child {
+							margin-left: 8px;
+							@include md {
+								margin-right: 0;
+								padding-bottom: 0;
+							}
+							.featurepic__top {
+								&::before {
+									background-image: url(../images/common/number03.svg);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		.about {
+			&__inner {
+				@include flex(between, end, wrap);
+				.boxleft {
+					max-width: 50%;
+					width: 100%;
+					@include lg {
+						max-width: 720px;
+						width: 100%;
+						margin: 0 auto;
+					}
+				}
+				.boxright {
+					max-width: 50%;
+					width: 100%;
+					padding-left: 24px;
+					@include lg {
+						max-width: 100%;
+						padding: 40px 0 0 0;
+					}
+					&__list {
+						li {
+							padding: 8px;
+							border-bottom: 1px solid $color6;
+							@include lg {
+								@include flex(start, center);
+							}
+							@include md {
+								@include flex(start, start, 0, 0, 1);
+							}
+							h4 {
+								font-size: 1.6rem;
+								color: $color5;
+								padding-bottom: 8px;
+								@include lg {
+									max-width: 140px;
+									width: 100%;
+									@include flex(start, center);
+								}
+							}
+							&:nth-child(4) {
+								p {
+									span {
+										color: $color6;
+										padding-right: 8px;
+									}
+								}
+							}
+							&:first-child {
+								padding-top: 0;
+							}
+						}
+					}
+				}
+				.map {
+					padding-top: 40px;
+					max-width: 100%;
+					width: 100%;
+				}
+				.history {
+					max-width: 100%;
+					width: 100%;
+					padding: 0 10px;
+					border-bottom: 1px solid $color6;
+					h3 {
+						text-align: center;
+						color: $color5;
+						padding: 56px 0 48px 0;
+						@include sp {
+							padding: 32px 0 24px 0;
+						}
+					}
+					&__article {
+						@include flex(start, center);
+						padding-bottom: 16px;
+						@include sp {
+							@include flex(start, start, 0, 0, 1);
+						}
+						&--date {
+							max-width: 136px;
+							width: 100%;
+							@include sp {
+								padding-bottom: 8px;
+							}
+						}
+					}
+				}
+			}
+		}
+		.recruit {
+			.boxbottom {
+				margin: 0 auto;
+				max-width: 740px;
+				width: 100%;
+				padding-top: 40px;
+				@include flex(center, center, 0, 0, 1);
+				@include md {
+					padding-top: 24px;
+				}
+				h3 {
+					color: $color4;
+					padding-bottom: 24px;
+					text-align: center;
+					@include md {
+						text-align: left;
+					}
+				}
+				p {
+					text-align: center;
+					@include md {
+						text-align: left;
+					}
+					&:last-child {
+						padding-top: 16px;
+					}
+					br {
+						@include md {
+							display: none;
+						}
+					}
+				}
+			}
+			.recruitlist {
+				padding-top: 56px;
+				@include md {
+					padding-top: 32px;
+				}
+				&__pic {
+					&--title {
+						max-width: 100%;
+						width: 100%;
+						height: 80px;
+						background-color: $color5;
+						@include flex(start, center);
+						padding: 0 40px;
+						@include sp {
+							height: 56px;
+							padding: 0 24px;
+						}
+						h4 {
+							color: $color1;
+							width: 100%;
+							@include flex(between, center);
+							&::after {
+								@include arrow;
+								transform: rotateX(0deg);
+								transition: 0.5s;
+							}
+							&.active {
+								&::after {
+									transform: rotateX(180deg);
+									transition: 0.5s;
+								}
+							}
+						}
+					}
+					&--inner {
+						padding: 32px 40px;
+						background-color: $color1;
+						display: none;
+						@include sp {
+							padding: 24px;
+						}
+						dl {
+							@include flex(start, center);
+							border-bottom: 1px dashed $color5;
+							padding: 16px 0;
+							@include md {
+								@include flex(start, start, 0, 0, 1);
+							}
+							dt {
+								max-width: 180px;
+								width: 100%;
+								font-weight: 500;
+								font-style: normal;
+								color: $color4;
+								@include md {
+									padding-bottom: 16px;
+								}
+							}
+							&:first-child {
+								padding-top: 0;
+							}
+						}
+					}
+				}
+			}
+		}
+		.product {
+			.item {
+				max-width: 100%;
+				width: 100%;
+				@include flex(between, start);
+				@include lg {
+					@include flex(between, center, 0, 0, 1);
+				}
+				@include md {
+					@include flex(center, center, 0, 0, 1);
+				}
+				&__article {
+					max-width: calc(50% - 24px);
+					width: 100%;
+					position: relative;
+					padding-bottom: 64px;
+					@include lg {
+						max-width: 100%;
+						padding: 0;
+					}
+					@include md {
+						max-width: 100%;
+						padding: 0;
+						@include flex(between, center);
+						padding-bottom: 32px;
+					}
+					@include sp {
+						@include flex(center, center, 0, 0, 1);
+					}
+					&--pot {
+						width: 100%;
+						@include lg {
+							max-width: 50%;
+						}
+						@include sp {
+							max-width: calc(50% - 16px);
+							max-width: 100%;
+							width: 100%;
+						}
+					}
+					&--box {
+						position: absolute;
+						right: 0;
+						bottom: 0;
+						max-width: 432px;
+						width: 100%;
+						padding: 10px 0 10px 16px;
+						background-color: $color1;
+						@include lg {
+							max-width: 500px;
+						}
+						@include md {
+							position: inherit;
+							max-width: calc(50% - 16px);
+							width: 100%;
+						}
+						@include sp {
+							max-width: 100%;
+							width: 100%;
+							padding: 16px 0 0 0;
+						}
+						h4 {
+							padding-bottom: 8px;
+							font-size: 2.2rem;
+							@include lg {
+								font-size: 2.4rem;
+							}
+						}
+						a {
+							margin: 20px 0 0 auto;
+							@include flex(end, center);
+							&::after {
+								content: "";
+								width: 32px;
+								height: 8px;
+								background-image: url(../images/common/link_arrow.svg);
+								background-size: 100%;
+								margin-left: 8px;
+								background-repeat: no-repeat;
+							}
+						}
+					}
+					&:last-child {
+						@include lg {
+							margin-top: 56px;
+						}
+						@include md {
+							margin-top: 32px;
+							flex-direction: row-reverse;
+						}
+						@include sp {
+							@include flex(center, center, 0, 0, 1);
+							flex-direction: column;
+						}
+					}
+				}
+			}
+		}
+	}
+}

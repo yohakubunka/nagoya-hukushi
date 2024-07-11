@@ -1,0 +1,75 @@
+#front-news {
+	.news {
+		padding: 40px 40px 40px 40px;
+		background-color: $color13;
+		margin: 0 auto;
+		@include sm {
+			padding: 40px 16px;
+		}
+		.common-head {
+			margin-bottom: 40px;
+		}
+		.front-news-area {
+			&__row {
+				@include flex(start, center);
+				padding-bottom: 16px;
+				padding-top: 16px;
+				padding-right: 8px;
+				border-bottom: solid 1px $color14;
+				@include sm {
+					flex-direction: column;
+					align-items: initial;
+				}
+				&:first-child {
+					padding-top: 0;
+				}
+				.data-category {
+					@include flex($align: center);
+				}
+				&--date {
+					margin-right: 16px;
+				}
+				&--category {
+					margin-right: 24px;
+					width: 132px;
+					height: 32px;
+					text-align: center;
+					background-color: $color6;
+					border-radius: 3px;
+					color: $color1;
+					font-size: 1.6rem;
+					line-height: 1.5em;
+					letter-spacing: 0.1em;
+					@include flex(center, center);
+					@include sm {
+						height: 24px;
+						padding: 0 16px;
+						font-size: 1rem;
+					}
+				}
+				.title-icon {
+					@include flex(between, center);
+					width: 100%;
+					@include sm {
+						margin-top: 8px;
+					}
+				}
+				&--title {
+					@include lines-truncate(1);
+					margin-right: 24px;
+					@include sm {
+						margin-right: 16px;
+					}
+				}
+				.link-icon {
+					width: 20px;
+					margin-left: auto;
+				}
+			}
+			.green-button {
+				margin: 0 auto;
+				margin-top: 40px;
+			}
+		}
+	}
+}

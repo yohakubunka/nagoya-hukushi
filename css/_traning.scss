@@ -1,0 +1,133 @@
+#traning-business {
+	.two-column {
+		margin-bottom: 40px;
+		.business-right {
+			margin-top: auto;
+		}
+	}
+	.ac-area {
+		.ac-parent {
+			margin-top: 56px;
+			@extend %thuku-32-b-white;
+			height: 80px;
+			@include sm {
+				font-size: 1.8rem;
+				height: 64px;
+				margin-top: 32px;
+			}
+		}
+		.ac-child {
+			padding: 40px 0 0 0;
+		}
+	}
+}
+
+#traning-teacher {
+	background-color: $color10;
+	.two-column {
+		&__right {
+			margin-top: auto;
+			.teacher-name {
+				@extend %shuei-32-b-black;
+				padding-bottom: 28px;
+				line-height: 1.4em;
+			}
+			.teacher-title {
+				@extend %shuei-32-b-black;
+				font-size: 2.4rem;
+				line-height: 1.4em;
+				padding-bottom: 16px;
+			}
+		}
+	}
+}
+
+#traning-curriculum {
+	.three-column {
+		margin: 0 -8px;
+		padding-bottom: 0;
+		@include sm {
+			margin: -16px -8px;
+		}
+		&__item {
+			background-color: $color10;
+			padding: 32px 16px;
+			text-align: center;
+			width: calc(100% / 3 - 16px);
+			margin: 0 calc(16px / 2);
+			@include sm {
+				width: calc(100% / 2 - 16px);
+				margin: 8px calc(16px / 2);
+			}
+			@include sp {
+				width: 100%;
+			}
+			.icon {
+				max-width: 80px;
+				margin: 0 auto;
+				margin-bottom: 24px;
+			}
+			.green-button {
+				margin: 0 auto;
+			}
+			.curriculum-name {
+				@extend %shuei-24-b-white;
+				color: $color8;
+				margin-bottom: 16px;
+				@include lg {
+					font-size: 1.8rem;
+				}
+			}
+			.curriculum-text {
+				margin-bottom: 24px;
+			}
+			.green-button {
+				@include lg {
+					font-size: 1.8rem;
+					max-width: 240px;
+					height: 40px;
+				}
+			}
+		}
+	}
+}
+
+#traning-facility {
+	background-color: $color10;
+	.two-column {
+		&__right,
+		&__left {
+			padding-bottom: 32px;
+			@include sm {
+				padding-bottom: 0;
+				margin-bottom: 32px;
+			}
+		}
+		&__right {
+			&:last-child {
+				padding-bottom: 0;
+			}
+		}
+		&__left {
+			&:last-child {
+				padding-bottom: 0;
+			}
+		}
+		.facility-name {
+			@extend %shuei-24-b-black;
+			margin: 16px 0 32px 0;
+			@include sm {
+				margin: 8px 0 16px 0;
+			}
+		}
+		.facility-address {
+			margin-bottom: 40px;
+			@include sm {
+				margin-bottom: 24px;
+			}
+		}
+		.green-button {
+			margin-left: auto;
+		}
+	}
+}

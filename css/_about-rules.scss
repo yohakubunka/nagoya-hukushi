@@ -1,0 +1,19 @@
+#about-rules {
+    .rules {
+        &__text {
+            text-align: center;
+        }
+        &__button {
+            @include flex ($justify: center);
+            margin-top: 40px;
+            .green-button {
+                &:first-child {
+                    margin-right: 32px;
+                    @include sm {
+                        margin-right: 16px;
+                    }
+                }
+            }
+        }
+    }
+}

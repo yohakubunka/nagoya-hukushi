@@ -1,0 +1,23 @@
+.breadcrumb {
+    @include flex($align: center);
+    .breadcrumb-arrow {
+        display: inline-block;
+        margin: 0 4px;
+    }
+    li {
+        font-size: 1.4rem;
+        @include flex();
+        span {
+            white-space: nowrap;
+            a {
+                white-space: nowrap
+            }
+        }
+    }
+    .bread {
+        span {
+            white-space: normal;
+            @include lines-truncate(1);
+        }
+    }
+}

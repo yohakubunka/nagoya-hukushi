@@ -1,0 +1,473 @@
+#products {
+	.price {
+		.price__list {
+			.tabbtn {
+				max-width: calc(100% - 112px);
+				width: 100%;
+				margin: 0 auto;
+				@include flex(between, center);
+				@include sp {
+					max-width: 100%;
+					@include flex(center, center, 0, 0, 1);
+				}
+				&__btn {
+					max-width: calc(50% - 24px);
+					width: 100%;
+					height: 48px;
+					border: 1px solid $color5;
+					transition: 0.5s;
+					@include md {
+						max-width: calc(50% - 12px);
+					}
+					@include sp {
+						max-width: 100%;
+						width: 100%;
+					}
+					&:first-child {
+						@include sp {
+							margin-bottom: 16px;
+						}
+					}
+					&--inner {
+						width: 100%;
+						height: 100%;
+						@include flex(center, center);
+						h4 {
+							line-height: 1em;
+							color: $color5;
+						}
+					}
+					&.open {
+						border: none;
+						background-color: $color5;
+						transition: 0.5s;
+						.tabbtn__btn--inner {
+							h4 {
+								color: $color1;
+							}
+						}
+					}
+				}
+			}
+			//スライドの表
+			.tabinner {
+				padding-top: 40px;
+				@include md {
+					padding-top: 24px;
+				}
+				&__slide {
+					display: none;
+					&.show {
+						display: block;
+					}
+					.wireslide,
+					.acrylicslide {
+						&__inner {
+							table {
+								max-width: calc(100% - 112px);
+								width: 100%;
+								margin: 0 auto;
+								@include flex(between, center, wrap);
+								@include sp {
+									max-width: 100%;
+								}
+								thead {
+									width: 100%;
+									padding-bottom: 8px;
+									tr {
+										max-width: 100%;
+										width: 100%;
+										background-color: $color5;
+										height: 40px;
+										@include flex(center, center);
+										@include sp {
+											height: 56px;
+										}
+										th {
+											font-size: 2rem;
+											line-height: 1.2em;
+											color: $color1;
+											@include md {
+												font-size: 1.6rem;
+											}
+											@include sp {
+												text-align: center;
+												padding: 8px;
+											}
+										}
+									}
+								}
+								tbody {
+									max-width: 280px;
+									width: 100%;
+									@include flex(center, center, 0, 0, 1);
+									@include lg {
+										max-width: calc(50% - 8px);
+									}
+									@include md {
+										max-width: 100%;
+									}
+									&:last-of-type {
+										@include lg {
+											max-width: 100%;
+										}
+									}
+									tr {
+										width: 100%;
+										padding-bottom: 8px;
+										td {
+											width: 100%;
+											height: 40px;
+											border: 1px solid $color6;
+											padding: 8px;
+											@include flex(between, center);
+										}
+										&:first-child {
+											@include flex(center, center);
+											td {
+												color: $color5;
+												border: 1px solid $color5;
+												@include flex(center, center);
+												@extend .box_title;
+											}
+										}
+									}
+								}
+								tfoot {
+									width: 100%;
+									tr {
+										max-width: 100%;
+										width: 100%;
+										background-color: $color5;
+										height: 40px;
+										@include flex(center, center);
+										th {
+											@extend .box_title;
+											font-size: 1.4rem;
+											line-height: 1em;
+											color: $color1;
+										}
+									}
+								}
+							}
+						}
+					}
+					.wireslide {
+						&__inner {
+							table {
+								tbody {
+									max-width: 100%;
+									width: 100%;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		.commission {
+			max-width: calc(100% - 112px);
+			width: 100%;
+			margin: 0 auto;
+			padding-top: 40px;
+			@include md {
+				max-width: 100%;
+			}
+			h3 {
+				br {
+					display: none;
+					@include sp {
+						display: inline-block;
+					}
+				}
+				&::after {
+					content: "";
+					display: none;
+				}
+			}
+			&__list {
+				width: 100%;
+				@include flex(between, center);
+				@include sp {
+					@include flex(center, center, 0, 0, 1);
+				}
+				&--box {
+					width: 100%;
+					.codlist {
+						width: 100%;
+						dl {
+							max-width: 100%;
+							width: 100%;
+							@include flex(between, center);
+							@include sp {
+								@include flex(between, center, wrap);
+							}
+							dd,
+							dt {
+								max-width: calc(50% - 4px);
+								width: 100%;
+								height: 40px;
+								border: 1px solid $color5;
+								color: $color6;
+								@include flex(center, center);
+								@extend .text;
+								margin-bottom: 8px;
+								@include sp {
+									max-width: 100%;
+								}
+							}
+							&:first-child {
+								dd,
+								dt {
+									background-color: $color5;
+									color: $color1;
+									@include sp {
+										max-width: 100%;
+										margin-bottom: 0;
+										height: 32px;
+									}
+								}
+								dd {
+									@include sp {
+										margin-bottom: 8px;
+									}
+								}
+							}
+							&:last-child {
+								dd,
+								dt {
+									margin-bottom: 0;
+								}
+								@include sp {
+									dt {
+										margin-bottom: 8px;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			.caution {
+				width: 100%;
+				padding-top: 40px;
+				&__title {
+					color: $color5;
+					font-weight: 500;
+					padding-bottom: 16px;
+				}
+				ul {
+					li {
+						font-size: 1.4rem;
+						span {
+							color: $color5;
+						}
+					}
+				}
+			}
+		}
+	}
+	//価格フォーム
+	.order {
+		&__box {
+			&--inner {
+				h3 {
+					@include sp {
+						font-size: 2rem;
+						text-align: center;
+						line-height: 1.2em;
+					}
+					br {
+						display: none;
+						@include sp {
+							display: inline-block;
+						}
+					}
+					&::after {
+						content: "";
+						margin: 0;
+						display: none;
+					}
+				}
+				.formbox {
+					&:first-child {
+						h2 {
+							padding-top: 0;
+						}
+					}
+					&:last-child {
+						margin-bottom: 0;
+					}
+					h5 {
+						font-size: 2rem;
+						@include flex(start, center);
+						@extend .box_title;
+						padding-bottom: 24px;
+						padding-top: 32px;
+						@include sp {
+							font-size: 1.6rem;
+							line-height: 1.6em;
+						}
+						&::before {
+							content: "";
+							width: 4px;
+							height: 32px;
+							background-color: $color5;
+							margin-right: 10px;
+						}
+					}
+					&__box {
+						padding-bottom: 16px;
+						ul {
+							max-width: 100%;
+							width: 100%;
+							@include flex(between, center);
+							@include lg {
+								@include flex(start, center, wrap);
+							}
+							@include md {
+								@include flex(start, center, 0, 0, 1);
+							}
+							.numbertitle {
+								max-width: 156px;
+								width: 100%;
+								padding-right: 16px;
+								color: $color5;
+								@extend .box_title;
+								@include lg {
+									max-width: 100%;
+									padding-bottom: 16px;
+								}
+								span {
+									font-size: 2rem;
+								}
+							}
+							.buybox {
+								max-width: 400px;
+								width: 100%;
+								@include flex(end, center);
+								@include lg {
+									max-width: calc(50% - 16px);
+									margin-right: 16px;
+								}
+								@include md {
+									max-width: 100%;
+									margin: 0;
+									@include flex(center, center);
+								}
+								span {
+									flex-shrink: 0;
+									@extend .box_title;
+									&:first-child {
+										padding-right: 8px;
+										@include md {
+											max-width: max-content;
+											width: 100%;
+											padding: 0 8px 8px 0;
+											flex-shrink: inherit;
+										}
+									}
+									&:last-child {
+										padding-left: 8px;
+									}
+								}
+							}
+							.subtotal {
+								max-width: 284px;
+								width: 100%;
+								@include flex(end, center);
+								@include lg {
+									max-width: calc(50% - 16px);
+									margin-left: 16px;
+								}
+								@include md {
+									max-width: 100%;
+									margin: 0;
+									padding-top: 16px;
+									@include flex(center, center);
+								}
+								span {
+									font-size: 2rem;
+									@extend .box_title;
+									color: $color4;
+									padding-right: 8px;
+									line-height: 1em;
+									@include sp {
+										font-size: 1.6rem;
+									}
+								}
+								&__text {
+									flex-shrink: 0;
+								}
+								&__price {
+									max-width: 232px;
+									width: 100%;
+									height: 32px;
+									padding: 0 8px;
+									line-height: 1em;
+									background-color: $color1;
+									@include flex(start, center);
+									@include lg {
+										max-width: 400px;
+										width: 100%;
+									}
+									@include md {
+										max-width: 100%;
+									}
+								}
+							}
+							li {
+								width: 100%;
+								input[type="number"] {
+									max-width: 186px;
+									width: 100%;
+									flex-shrink: 0;
+									height: 32px;
+									padding: 0 8px;
+									background-color: $color1;
+									@include lg {
+										max-width: 100%;
+										flex-shrink: inherit;
+									}
+								}
+							}
+						}
+						&:last-child {
+							padding-bottom: 0;
+						}
+					}
+				}
+				&.item_wire {
+					padding-top: 56px;
+				}
+			}
+			.totalfee {
+				padding-top: 56px;
+				&__inner {
+					max-width: 100%;
+					width: 100%;
+					height: 80px;
+					background-color: $color5;
+					padding: 24px;
+					@include flex(between, center);
+					p {
+						font-size: 2.4rem;
+						color: $color1;
+					}
+					&--box {
+						font-size: 2.4rem;
+						color: $color1;
+						#fultotal {
+							font-size: 3.2rem;
+							color: $color1;
+							padding-right: 8px;
+						}
+					}
+				}
+			}
+		}
+	}
+	.contactinfo {
+		padding-top: 64px;
+	}
+}

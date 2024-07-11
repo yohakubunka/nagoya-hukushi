@@ -1,0 +1,120 @@
+#footer {
+	.footer-content {
+		@include flex();
+		justify-content: space-between;
+		&__left {
+			.footer-logo {
+				max-width: 265px;
+				width: 100%;
+				@include sm {
+					max-width: 200px;
+				}
+			}
+			&--text {
+				font-weight: 600;
+			}
+			.number {
+				@include flex();
+				@include sp {
+					flex-direction: column;
+				}
+			}
+			.text-top-margin {
+				margin-top: 16px;
+				font-size: 1.8rem;
+				@include sm {
+					font-size: 1.6rem;
+					margin-top: 8px;
+				}
+			}
+		}
+		&__right {
+			position: relative;
+			&--pagetop {
+				background-color: $color6;
+				@include flex($justify: center, $column: 1, $align: center);
+				border-radius: 50%;
+				width: 96px;
+				height: 96px;
+				@include sm {
+					width: 80px;
+					height: 80px;
+					position: absolute;
+					right: 0;
+				}
+				@include xs {
+					top: -24px;
+				}
+				img {
+					width: 20px;
+				}
+			}
+			&--button {
+				font-size: 1.2rem;
+				@extend %noto-sans-bold;
+				line-height: 1.4em;
+				padding-top: 8px;
+				color: $color1;
+				@include sm {
+					font-size: 1rem;
+				}
+			}
+		}
+	}
+	.footer-nav {
+		padding-bottom: 16px;
+		@include flex($justify: center);
+		margin-top: 40px;
+		@include sm {
+			flex-wrap: wrap;
+			text-align: center;
+			margin-top: 32px;
+		}
+		@include sp {
+			flex-direction: column;
+			justify-content: center;
+		}
+		&__link {
+			border-right: solid 2px $color8;
+			padding: 0 24px;
+			@extend %shuei-18-b-black;
+			&:last-child {
+				border-right: none;
+				@include sm {
+					border-right: solid 1px $color8;
+				}
+			}
+			@include lg {
+				padding: 0 16px;
+			}
+			@include sm {
+				width: calc(100% / 2 - 16px);
+				border: none;
+				padding: 8px 16px;
+				margin: 8px 8px;
+				border-left: solid 1px;
+				border-right: solid 1px;
+			}
+			@include sp {
+				width: 100%;
+				margin: 8px 0;
+			}
+			a {
+				width: 100%;
+				display: inline-block;
+			}
+		}
+	}
+}
+
+.copy-write {
+	background-color: $color6;
+	color: $color1;
+	font-size: 1.4rem;
+	text-align: center;
+	padding: 16px 16px;
+	width: 100%;
+	@include sm {
+		font-size: 1rem;
+	}
+}

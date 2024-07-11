@@ -1,0 +1,90 @@
+.side-bar {
+    max-width: 240px;
+    width: 100%;
+    @include sm {
+        @include flex ();
+        max-width: 100%;
+    }
+    .archive,
+    .category {
+        @include sm {
+            max-width: 240px;
+            width: 100%;
+        }
+    }
+    .archive {
+        margin-top: 40px;
+        @include sm {
+            margin-top: 0;
+            margin-left: 16px;
+        }
+        .monthly-list {
+            li {
+                display: flex;
+                align-items: center;
+                margin-bottom: 16px;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+                &:before {
+                    border-top: 1px solid $color8;
+                    content: "";
+                    border-radius: 2px;
+                    width: 8px;
+                    margin-right: 8px;
+                }
+            }
+        }
+    }
+    .left-text-border {
+        display: flex;
+        align-items: center;
+        margin-bottom: 16px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+        &:before {
+            border-top: 1px solid $color8;
+            content: "";
+            border-radius: 2px;
+            width: 8px;
+            margin-right: 8px;
+        }
+    }
+}
+
+// 内部アコーディオン
+.ac-parent {
+    position: relative;
+    cursor: pointer;
+    background-color: $color9;
+    color: $color1;
+    width: 100%;
+    height: 40px;
+    padding-left: 16px;
+    @include flex($align: center);
+    svg {
+        margin-left: auto;
+        transition: 0.3s;
+        margin-right: 16px;
+    }
+}
+
+.ac-parent.open {
+    svg {
+        transform: rotate(180deg);
+    }
+}
+
+.menu-items__corporate--title {
+    &:before {
+        @include sm {
+            width: 16px;
+        }
+    }
+}
+
+.ac-child {
+    display: none;
+    padding-top: 24px;
+}

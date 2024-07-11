@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ffa95e;
+      }
+
+      .cls-2 {
+        fill: none;
+        stroke: #fff;
+        stroke-width: 1.5px;
+      }
+    </style>
+  </defs>
+  <g id="link_btn" transform="translate(-1345 -1106)">
+    <circle id="楕円形_8" data-name="楕円形 8" class="cls-1" cx="10" cy="10" r="10" transform="translate(1345 1106)"/>
+    <path id="パス_13" data-name="パス 13" class="cls-2" d="M1349.417,1111.5l5,5-5,5" transform="translate(3.583 -0.5)"/>
+  </g>
+</svg>

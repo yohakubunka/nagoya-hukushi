@@ -1,0 +1,48 @@
+// メインビジュアル
+.mainvisual {
+	padding-top: 96px;
+	@include sm {
+		padding-top: 72px;
+	}
+	&__inner {
+		padding: 0 80px;
+		margin-bottom: 48px;
+		@include lg {
+			padding: 0 16px;
+		}
+		@include sm {
+			margin-bottom: 40px;
+		}
+		&--image {
+			position: relative;
+		}
+	}
+	.header-green {
+		background-color: $color9;
+		width: 96px;
+		height: 96px;
+		@include flex($justify: center, $column: 1, $align: center);
+		border-radius: 50%;
+		@include absoluteCenterX;
+		top: initial;
+		bottom: -48px;
+		@include sm {
+			width: 80px;
+			height: 80px;
+			bottom: -40px;
+		}
+		&__text {
+			font-size: 1.2rem;
+			@extend %noto-sans-bold;
+			line-height: 1.4em;
+			padding-bottom: 8px;
+			color: $color1;
+			@include sm {
+				font-size: 1rem;
+			}
+		}
+		img {
+			width: 20px;
+		}
+	}
+}

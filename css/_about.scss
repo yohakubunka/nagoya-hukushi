@@ -1,0 +1,12 @@
+#about-philosophy {
+    .about {
+        text-align: center;
+        &__title {
+            @extend %shuei-32-b-orange;
+            padding-bottom: 32px;
+            @include sp {
+                font-size: 1.8rem;
+            }
+        }
+    }
+}

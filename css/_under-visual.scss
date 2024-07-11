@@ -1,0 +1,17 @@
+// メインビジュアル
+.under-visual {
+	padding-top: 96px;
+	@include sm {
+		padding-top: 72px;
+	}
+	&__inner {
+		padding: 0 80px;
+		margin-bottom: 16px;
+		@include lg {
+			padding: 0 16px;
+		}
+		@include sm {
+			margin-bottom: 16px;
+		}
+	}
+}

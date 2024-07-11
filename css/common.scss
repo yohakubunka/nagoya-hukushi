@@ -1,0 +1,33 @@
+@charset "UTF-8";
+//コンパイルscss//
+@import "reset"; //ブラウザのデフォルトcssの打ち消し用
+@import "variable"; //色やブレークポイントの変数化
+@import "mixin"; //メディアクエリやflexの並び
+@import "basic"; //ベーシックスタイル
+@import "front"; //トップページのスタイル
+@import "about"; //ABOUTページのスタイル
+@import "news"; //newsページのスタイル
+@import "news-single"; //singleページのスタイル
+@import "contact"; //コンタクトページのスタイル
+@import "header";
+@import "contact-section";
+@import "banner-section";
+@import "footer";
+@import "mainvisual";
+@import "news-section";
+@import "front-about";
+@import "under-visual";
+@import "breadcrumb";
+@import "pagination";
+@import "sideber";
+@import "single";
+@import "about-company";
+@import "about-rules";
+@import "traning";
+@import "front-traning";
+
+/*
+* 案件担当者以外が記述する場合は
+なるべく此処に記述してください。
+* このimportしたファイル以下に記述しないでください。
+*/

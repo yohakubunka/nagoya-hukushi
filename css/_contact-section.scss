@@ -1,0 +1,33 @@
+// お問い合わせセクション
+#contact {
+    background-color: $color10;
+    .two-column {
+        padding-bottom: 0;
+        &__left,
+        &__right {
+            background-color: $color1;
+            padding: 40px 0;
+            text-align: center;
+            .contact-title {
+                @include flex($align: center, $justify: center);
+                margin-bottom: 16px;
+                .title {
+                    @extend %shuei-24-b-black;
+                }
+                img {
+                    max-width: 24px;
+                    width: 100%;
+                    margin-right: 8px;
+                }
+            }
+            .contact-sec-text {
+                color: $color11;
+                font-weight: 600;
+                padding-bottom: 32px;
+            }
+            .green-button {
+                margin: 0 auto;
+            }
+        }
+    }
+}

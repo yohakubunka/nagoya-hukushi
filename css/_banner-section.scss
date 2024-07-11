@@ -1,0 +1,26 @@
+#banner {
+	background-color: $color13;
+	.banner-section {
+		@include flex();
+		flex-wrap: wrap;
+		margin: calc(-32px / 2) calc(-16px / 2);
+		@include sm {
+			margin: calc(-24px / 2) calc(-16px / 2);
+		}
+		@include sp {
+			margin: calc(-16px / 2) calc(-16px / 2);
+		}
+		&__link {
+			width: calc(100% / 4 - 16px);
+			margin: calc(32px / 2) calc(16px / 2);
+			@include sm {
+				width: calc(100% / 3 - 16px);
+				margin: calc(24px / 2) calc(16px / 2);
+			}
+			@include sp {
+				width: calc(100% / 2 - 16px);
+				margin: calc(16px / 2) calc(16px / 2);
+			}
+		}
+	}
+}

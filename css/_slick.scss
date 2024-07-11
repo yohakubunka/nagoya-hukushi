@@ -1,0 +1,183 @@
+.businesslist {
+	//事業案内
+	max-width: 100%;
+	width: 100%;
+	&__slide {
+		width: 100%;
+		.slick-slider {
+			width: 100%;
+			margin: 0 !important;
+			button.slick-prev,
+			button.slick-next {
+				max-width: 40px;
+				width: 100%;
+				height: 40px;
+				@include sp {
+					max-width: 24px;
+					height: 24px;
+				}
+			}
+			button.slick-prev {
+				left: 0;
+				&::before {
+					@include slick-arrow;
+					background-image: url(../images/common/right_arrow.svg);
+				}
+			}
+			button.slick-next {
+				right: 0;
+				&::before {
+					@include slick-arrow;
+					background-image: url(../images/common/left_arrow.svg);
+				}
+			}
+			.slick-list {
+				max-width: calc(100% - 80px);
+				width: 100%;
+				margin: 0 auto;
+				padding-bottom: 36px;
+				@include sp {
+					max-width: calc(100% - 48px);
+				}
+				.slick-track {
+					.slick-slide {
+						padding: 0 32px;
+						@include sp {
+							padding: 0 16px;
+						}
+						@include xs {
+							padding: 0 8px;
+						}
+						.slick {
+							max-width: 100%;
+							width: 100%;
+							position: relative;
+							@include flex(center, end);
+							@include md {
+								@include flex(center, center, 0, 0, 1);
+							}
+							&__img {
+								max-width: calc(50% + 24px);
+								width: 100%;
+								margin: 0 auto 0 0;
+								padding-bottom: 32px;
+								@include md {
+									padding-bottom: 16px;
+									max-width: 100%;
+								}
+								@include xs {
+									padding: 0 8px;
+								}
+							}
+							&__box {
+								max-width: calc(50% + 24px);
+								box-shadow: 2px 2px 4px $color2;
+								width: 100%;
+								height: 240px;
+								padding: 0 24px 24px 24px;
+								background-color: $color1;
+								@include absolutebusinessbox;
+								@include flex(center, start, 0, 0, 1);
+								@include md {
+									height: 200px;
+									position: inherit;
+									padding-top: 16px;
+									max-width: 100%;
+								}
+								@include sp {
+									height: 220px;
+									padding: 16px;
+								}
+								&--title {
+									padding-bottom: 16px;
+									@include md {
+										padding-bottom: 8px;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+//製品販売
+.section {
+	&__inner {
+		.tabinner {
+			&__slide {
+				.wireslide,
+				.acrylicslide {
+					margin: 0;
+					padding-bottom: 30px;
+					.slick-arrow {
+						width: 40px;
+						height: 40px;
+						z-index: 2;
+						@include flex(center, center);
+						&::before {
+							@include slick-arrow;
+						}
+					}
+					.slick-prev {
+						@include sp {
+							display: none !important;
+						}
+						left: 0;
+						&::before {
+							background-image: url(../images/common/right_arrow.svg);
+						}
+					}
+					.slick-next {
+						@include sp {
+							display: none !important;
+						}
+						right: 0;
+						&::before {
+							background-image: url(../images/common/left_arrow.svg);
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.slick-slider,
+.acrylicslide {
+	.slick-dots {
+		bottom: 0;
+		li {
+			width: 12px;
+			height: 12px;
+			margin: 0 8px;
+			button {
+				width: 12px;
+				height: 12px;
+				margin: 0;
+				padding: 0;
+				@include flex(center, center);
+				&::before {
+					content: "";
+					width: 100%;
+					height: 100%;
+					color: $color3;
+					border-radius: 20px;
+					border: 1px solid $color5;
+					position: inherit;
+					opacity: 1;
+				}
+			}
+		}
+		.slick-active {
+			button {
+				&::before {
+					border: none;
+					background-color: $color5;
+				}
+			}
+		}
+	}
+}

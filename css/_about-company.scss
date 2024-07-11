@@ -1,0 +1,39 @@
+#about-company {
+    background-color: $color10;
+    .company-table {
+        &__row {
+            border-bottom: solid 1px $color15;
+            padding: 16px 24px;
+            @include flex();
+            @include sm {
+                padding: 16px 8px;
+                flex-direction: column;
+            }
+            &:first-child {
+                padding-top: 0;
+            }
+            &:last-child {
+                padding-top: 0;
+            }
+            &--title {
+                max-width: 120px;
+                width: 100%;
+                margin-right: 32px;
+                @extend %shuei-18-b-black;
+                @include sm {
+                    margin-bottom: 8px;
+                }
+            }
+        }
+        iframe {
+            width: 100%;
+            height: 294px;
+            margin: 32px 0 56px 0;
+        }
+        .second-head {
+            @extend %thuku-32-b-orange;
+            text-align: center;
+            padding-bottom: 40px;
+        }
+    }
+}

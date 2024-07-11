@@ -1,0 +1,292 @@
+html {
+	font-size: 10px;
+	scroll-behavior: smooth;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-size: 1.8rem;
+	@extend %dnp-shuei;
+	line-height: 1.6em;
+	letter-spacing: 0.08em;
+	@include lg {
+		font-size: 1.6rem;
+	}
+	@include sm {
+		font-size: 1.4rem;
+	}
+}
+.tb {
+	@include media-min(1024px) {
+		display: none;
+	}
+}
+.sp {
+	@include media-min(768px) {
+		display: none;
+	}
+}
+
+.pc {
+	@include sm {
+		display: none;
+	}
+}
+
+.xs {
+	@include media-min(374px) {
+		display: none;
+	}
+}
+
+.page-width {
+	max-width: 1024px;
+	width: 100%;
+	margin: 0 auto;
+	padding: 0 16px;
+}
+
+section {
+	padding: 80px 0;
+	@include sm {
+		padding: 40px 0;
+	}
+}
+
+// 共通の緑色のボタン
+.green-button {
+	@include flex($align: center, $justify: center);
+	max-width: 280px;
+	width: 100%;
+	height: 56px;
+	border-radius: 5px;
+	background-color: $color9;
+	@extend %shuei-24-b-white;
+	position: relative;
+	transition: 0.4s;
+	@include md {
+		max-width: 240px;
+		height: 40px;
+	}
+	&:after {
+		border-top: 2px solid $color16;
+		content: "";
+		width: 32px;
+		position: absolute;
+		right: 0;
+		top: 50%;
+	}
+	&:hover {
+		background-color: $color1;
+		color: $color9;
+		border: solid 1px $color9;
+	}
+}
+
+// セクション見出し
+.common-head {
+	@include flex();
+	flex-direction: column;
+	text-align: center;
+	margin-bottom: 56px;
+	margin-top: 16px;
+	@extend %thuku-go-bold;
+	@include sm {
+		margin-bottom: 40px;
+	}
+	&__text {
+		@extend %thuku-go-b-48-black;
+		position: relative;
+		&:before {
+			content: "";
+			position: absolute;
+			left: 50%;
+			display: inline-block;
+			width: 56px;
+			height: 4px;
+			-webkit-transform: translateX(-50%);
+			transform: translate(-50%);
+			background-color: #ffa95e;
+			top: -16px;
+			@include sm {
+				width: 40px;
+			}
+		}
+	}
+	&--read {
+		padding-top: 8px;
+		@extend %noto-sans-20-green;
+	}
+}
+
+// コンテンツ見出し
+h3.orange-head {
+	@extend %shuei-32-b-orange;
+	padding-bottom: 40px;
+	@include lg {
+		padding-bottom: 24px;
+	}
+}
+
+img {
+	width: 100%;
+	height: auto;
+}
+
+//2カラムレイアウト
+.two-column {
+	@include flex();
+	flex-wrap: wrap;
+	@include xs {
+		@include flex(center, center, wrap);
+	}
+	&__left {
+		margin: 0 calc(32px / 2) 0 0;
+	}
+	&__right {
+		margin: 0 0 0 calc(32px / 2);
+	}
+	&__left,
+	&__right {
+		width: calc(100% / 2 - 16px);
+		@include flex($column: 1);
+		object-fit: contain;
+		@include sm {
+			width: 100%;
+			margin: 0 0 16px 0;
+			&:last-child {
+				margin: 0;
+			}
+		}
+	}
+	&--button {
+		margin-left: auto;
+		margin-top: auto;
+		@include sm {
+			margin: 0 auto;
+			margin-top: 40px;
+		}
+	}
+}
+//繰り返しの処理
+#traning-business {
+	.two-column {
+		&:nth-last-of-type(even) {
+			flex-direction: row-reverse;
+			.two-column__left {
+				margin: 0 0 0 calc(32px / 2);
+				@include sm {
+					margin: 0 0 16px 0;
+				}
+			}
+			.two-column__right {
+				margin: auto calc(32px / 2) 0 0;
+				@include sm {
+					margin: 0;
+				}
+			}
+		}
+	}
+}
+
+.two-column.reverse {
+	@include sm {
+		flex-direction: column-reverse;
+	}
+	.two-column__right {
+		@include sm {
+			margin: 0 0 16px 0;
+		}
+	}
+}
+
+//3カラムレイアウト
+.three-column {
+	@include flex();
+	flex-wrap: wrap;
+	margin: 0 calc(-40px / 2);
+	@include sm {
+		margin: calc(-16px / 2);
+	}
+	@include sp {
+		margin: calc(-24px / 2);
+	}
+	&__item {
+		width: calc(100% / 3 - 40px);
+		margin: 0 calc(40px / 2);
+		text-align: center;
+		@include sm {
+			margin: calc(16px / 2);
+			width: calc(100% / 2 - 16px);
+		}
+		@include sp {
+			width: 100%;
+			margin: calc(24px / 2);
+		}
+		.orange {
+			@extend %shuei-24-b-orange;
+			margin: 24px 0;
+			@include sm {
+				margin: 16px 0 8px 0;
+			}
+		}
+		&--image {
+			@include sm {
+				max-width: 240px;
+			}
+		}
+	}
+	// 写真に文字が重なっているバージョン
+	.over {
+		position: relative;
+		.over-title {
+			@include absoluteCenter;
+			background-color: $color12;
+			@extend %thuku-32-b-white;
+			width: 100%;
+			height: 100%;
+			@include flex($align: center, $justify: center);
+			white-space: nowrap;
+			&:after {
+				border-top: 2px solid $color1;
+				content: "";
+				width: 40px;
+				position: absolute;
+				right: 0;
+				top: 50%;
+			}
+		}
+		.over-image {
+			max-width: 100%;
+		}
+	}
+}
+
+.single-content__date-cat {
+	@include flex($align: center);
+	.category-back {
+		margin-left: 24px;
+		padding: 0 24px;
+		height: 32px;
+		text-align: center;
+		background-color: $color6;
+		color: $color1;
+		font-size: 1.6rem;
+		line-height: 1.5em;
+		letter-spacing: 0.1em;
+		@include flex($align: center, $justify: center);
+		@include sm {
+			height: 24px;
+			padding: 0 16px;
+			font-size: 1rem;
+		}
+	}
+}
+
+.orange {
+	color: $color11;
+}
+.green {
+	color: $color9;
+}
